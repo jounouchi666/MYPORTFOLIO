@@ -1,7 +1,14 @@
-import { Outlet } from 'react-router'
+import { Outlet, useLocation } from 'react-router'
 import { AppSidebar } from './components/AppSidebar'
+import { useEffect } from 'react'
 
 export function Layout() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname]);
+
   return (
     <div className="min-h-screen bg-background">
       <AppSidebar />
