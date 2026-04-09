@@ -78,111 +78,114 @@ export function ProjectsPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-8">
-      <h2 className="font-serif text-3xl text-foreground first-letter:text-primary mb-2 tracking-widest">
-        Projects
-      </h2>
-      <p className="text-muted-foreground mb-8">課題解決ベースの開発実績</p>
+    <>
+      <title>Portfolio - Projects</title>
+      <section className="py-8">
+        <h2 className="font-serif text-3xl text-foreground first-letter:text-primary mb-2 tracking-widest">
+          Projects
+        </h2>
+        <p className="text-muted-foreground mb-8">課題解決ベースの開発実績</p>
 
-      <div className="grid gap-4 mb-10">
-        {works.map((work, index) => (
-          <div
-            key={work.id}
-            className={cn(
-              'bg-card border border-border rounded-xl py-6 shadow-sm overflow-hidden',
-              'transition-all duration-300',
-              hoveredIndex === index && 'border-primary/30'
-            )}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className="px-6">
+        <div className="grid gap-4 mb-10">
+          {works.map((work, index) => (
+            <div
+              key={work.id}
+              className={cn(
+                'bg-card border border-border rounded-xl py-6 shadow-sm overflow-hidden',
+                'transition-all duration-300',
+                hoveredIndex === index && 'border-primary/30'
+              )}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="px-6">
 
-              {/* タイトル */}
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <h3 className="text-lg font-medium text-foreground flex items-center gap-2">
-                    {work.title}
-                  </h3>
+                {/* タイトル */}
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="text-lg font-medium text-foreground flex items-center gap-2">
+                      {work.title}
+                    </h3>
 
-                  {/* ステータス */}
-                  <span
-                    className={cn(
-                      'inline-block text-xs px-2 py-0.5 rounded border mt-1',
-                      statusStyle[work.status]
-                    )}
-                  >
-                    {work.status}
-                  </span>
+                    {/* ステータス */}
+                    <span
+                      className={cn(
+                        'inline-block text-xs px-2 py-0.5 rounded border mt-1',
+                        statusStyle[work.status]
+                      )}
+                    >
+                      {work.status}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* 説明 */}
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                {work.description}
-              </p>
+                {/* 説明 */}
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                  {work.description}
+                </p>
 
-              {/* 詳細（hover） */}
-              <div
-                className={cn(
-                  'overflow-hidden transition-all duration-500',
-                  hoveredIndex === index
-                    ? 'max-h-48 opacity-100 mb-4'
-                    : 'max-h-0 opacity-0'
-                )}
-              >
-                <div className="text-sm space-y-2 pl-3 border-l-2 border-primary/50">
-                  <p><span className="text-primary">課題:</span> {work.problem}</p>
-                  <p><span className="text-primary">解決:</span> {work.solution}</p>
-                  <p><span className="text-primary">設計:</span> {work.architecture}</p>
+                {/* 詳細（hover） */}
+                <div
+                  className={cn(
+                    'overflow-hidden transition-all duration-500',
+                    hoveredIndex === index
+                      ? 'max-h-48 opacity-100 mb-4'
+                      : 'max-h-0 opacity-0'
+                  )}
+                >
+                  <div className="text-sm space-y-2 pl-3 border-l-2 border-primary/50">
+                    <p><span className="text-primary">課題:</span> {work.problem}</p>
+                    <p><span className="text-primary">解決:</span> {work.solution}</p>
+                    <p><span className="text-primary">設計:</span> {work.architecture}</p>
+                  </div>
                 </div>
+
+                {/* タグ */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {work.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2 py-1 bg-secondary text-muted-foreground rounded"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* 導線 */}
+                <div className="flex gap-4 text-xs">
+                  {work.link && (
+                    <Link to={work.link} className="text-primary hover:underline">
+                      Detail →
+                    </Link>
+                  )}
+
+                  {work.github && (
+                    <a
+                      href={work.github}
+                      target="_blank"
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      GitHub →
+                    </a>
+                  )}
+                </div>
+
               </div>
-
-              {/* タグ */}
-              <div className="flex flex-wrap gap-2 mb-3">
-                {work.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2 py-1 bg-secondary text-muted-foreground rounded"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* 導線 */}
-              <div className="flex gap-4 text-xs">
-                {work.link && (
-                  <Link to={work.link} className="text-primary hover:underline">
-                    Detail →
-                  </Link>
-                )}
-
-                {work.github && (
-                  <a
-                    href={work.github}
-                    target="_blank"
-                    className="text-muted-foreground hover:text-primary"
-                  >
-                    GitHub →
-                  </a>
-                )}
-              </div>
-
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* 導線 */}
-      <div className="flex gap-6 text-sm">
-        <Link to="/profile" className="text-primary hover:underline">
-          ← Profile
-        </Link>
-        <Link to="/architecture" className="text-primary hover:underline">
-          Architecture →
-        </Link>
-      </div>
-    </section>
+        {/* 導線 */}
+        <div className="flex gap-6 text-sm">
+          <Link to="/profile" className="text-primary hover:underline">
+            ← Profile
+          </Link>
+          <Link to="/architecture" className="text-primary hover:underline">
+            Architecture →
+          </Link>
+        </div>
+      </section>
+    </>
   )
 }
