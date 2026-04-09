@@ -1,4 +1,4 @@
-export function MovieSearchDetailPage() {
+export default function MovieSearchDetailPage() {
   return (
     <section className="py-8 max-w-4xl">
       <h1 className="text-3xl font-serif first-letter:text-primary mb-2 tracking-widest">
