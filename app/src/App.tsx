@@ -7,7 +7,7 @@ import BooksAppDetailPage from './pages/Projects/BooksAppDetailPage'
 import MovieSearchDetailPage from './pages/Projects/MovieSearchDetailPage'
 import MovieReviewsDetailPage from './pages/Projects/MovieReviewsDetailPage'
 import ExpenseManagerDesailPage from './pages/Projects/ExpenseManagerDesailPage'
-import { ArchitecturePage } from './pages/ArchitecturePage'
+import ArchitecturePage from './pages/ArchitecturePage'
 
 export default function App() {
   return (
