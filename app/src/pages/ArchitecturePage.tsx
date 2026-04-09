@@ -31,13 +31,13 @@ export default function ArchitecturePage() {
           <h2 className="text-xl font-medium mb-3">Common Architecture</h2>
 
           <pre className="bg-card border border-border rounded-lg p-6 font-mono text-sm text-foreground/80 leading-relaxed">
-  {`Presentation (Controller / UI)
-          ↓
-  Application (UseCase)
-          ↓
-  Domain (Entity / ValueObject)
-          ↓
-  Infrastructure (DB / API / Framework)`}
+{`Presentation (Controller / UI)
+        ↓
+Application (UseCase)
+        ↓
+Domain (Entity / ValueObject)
+        ↓
+Infrastructure (DB / API / Framework)`}
           </pre>
 
           <p className="text-xs text-muted-foreground mt-3">
