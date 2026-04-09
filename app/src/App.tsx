@@ -4,8 +4,8 @@ import { ProfilePage } from './pages/ProfilePage'
 import { SkillsPage } from './pages/SkillsPage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import BooksAppDetailPage from './pages/Projects/BooksAppDetailPage'
-import { MovieSearchDetailPage } from './pages/Projects/MovieSearchDetailPage'
-import MovieReviewsDetailPage from './pages/Projects/MovieReviewsDesailPage'
+import MovieSearchDetailPage from './pages/Projects/MovieSearchDetailPage'
+import MovieReviewsDetailPage from './pages/Projects/MovieReviewsDetailPage'
 import ExpenseManagerDesailPage from './pages/Projects/ExpenseManagerDesailPage'
 
 export default function App() {
