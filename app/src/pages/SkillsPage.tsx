@@ -17,7 +17,7 @@ const skillCategories = [
         description: "外部API（TMDb）連携を含むCRUDアプリケーション開発",
         project: {
           name: "映画レビュー",
-          path: "/projects/movie-review"
+          path: "/projects/movie-reviews"
         }
       },
       {
@@ -62,7 +62,7 @@ const skillCategories = [
         description: "グリッドシステムを活用したレスポンシブデザインと、定型UIの迅速な実装",
         project: {
           name: "映画レビュー",
-          path: "/projects/movie-review"
+          path: "/projects/movie-reviews"
         }
       }
     ]
@@ -147,7 +147,7 @@ export function SkillsPage() {
       <p className="text-muted-foreground mb-8">技術スタックと技術の概要</p>
 
 
-      <div className="space-y-8">
+      <div className="space-y-8 mb-10">
         {skillCategories.map((category) => (
           <div key={category.name}>
             <h3 className="text-sm font-medium text-foreground/80 mb-4 tracking-wide uppercase">
@@ -175,6 +175,13 @@ export function SkillsPage() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 導線 */}
+      <div className="flex gap-6 text-sm">
+        <Link to="/architecture" className="text-primary hover:underline">
+          ← Architecture
+        </Link>
       </div>
     </section>
   );

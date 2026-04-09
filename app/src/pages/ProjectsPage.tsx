@@ -58,12 +58,16 @@ const works: Work[] = [
   },
   {
     id: 'movie-review',
-    title: '映画レビュー管理',
-    description: '映画レビューを管理するCRUDアプリ',
-    problem: 'シンプルCRUDでも責務が曖昧になりやすい',
-    solution: 'MVCの責務分離を明確化',
-    architecture: 'CodeIgniter4による軽量構成',
-    tags: ['CI4', 'MVC', 'API', 'MySQL'],
+    title: '映画レビュー管理（CI4）',
+    description: '学習過程で設計改善を行っている映画レビューアプリ',
+    problem:
+      'MVC中心の実装でControllerにロジックが集中し、責務が肥大化',
+    solution:
+      '一部機能にUseCase / Repositoryを導入し、段階的に責務分離を試行',
+    architecture:
+      'MVC + 部分的にClean Architecture導入（UseCase / Repository / DTO）',
+    tags: ['CodeIgniter4', 'MVC', 'Ajax', 'API', 'Refactoring'],
+
     status: 'In Progress',
     github: 'https://github.com/jounouchi666/ci4-movie-reviews',
     link: '/projects/movie-reviews',
@@ -80,7 +84,7 @@ export function ProjectsPage() {
       </h2>
       <p className="text-muted-foreground mb-8">課題解決ベースの開発実績</p>
 
-      <div className="grid gap-4">
+      <div className="grid gap-4 mb-10">
         {works.map((work, index) => (
           <div
             key={work.id}
@@ -168,6 +172,16 @@ export function ProjectsPage() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 導線 */}
+      <div className="flex gap-6 text-sm">
+        <Link to="/profile" className="text-primary hover:underline">
+          ← Profile
+        </Link>
+        <Link to="/architecture" className="text-primary hover:underline">
+          Architecture →
+        </Link>
       </div>
     </section>
   )

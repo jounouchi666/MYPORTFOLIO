@@ -250,7 +250,7 @@ export function ProfilePage() {
       </section>
 
        {/* GitHub Activity */}
-      <section className="mt-16">
+      <section className="mt-16 mb-10">
         <h2 className="font-serif text-2xl text-foreground first-letter:text-primary mb-6 tracking-widest">
           Development Activity
         </h2>
@@ -260,9 +260,9 @@ export function ProfilePage() {
             {githubActivity.contributions}
           </p>
 
-          <ul className="text-sm text-muted-foreground space-y-1">
+          <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-5">
             {githubActivity.items.map((item) => (
-              <li key={item}>・{item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
 
@@ -276,6 +276,13 @@ export function ProfilePage() {
           </a>
         </div>
       </section>
+
+      {/* 導線 */}
+      <div className="flex gap-6 text-sm">
+        <Link to="/projects" className="text-primary hover:underline">
+          Projects →
+        </Link>
+      </div>
     </>
   )
 }
