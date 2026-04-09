@@ -1,7 +1,20 @@
-import { ExternalLink } from 'lucide-react'
+import { Link } from 'react-router'
 
 export default function ExpenseManagerDesailPage() {
   return (
-    <p>Comming Soon...</p>
+    <>
+      <title>Portfolio - ExpenseManager</title>
+      <div className='mb-10'>
+        <p>Comming Soon...</p>
+      </div>
+      
+
+      {/* 導線 */}
+      <div className="flex gap-6 text-sm">
+        <Link to="/projects" className="text-primary hover:underline">
+          ← Back to Projects
+        </Link>
+      </div>
+    </>
   )
 }
