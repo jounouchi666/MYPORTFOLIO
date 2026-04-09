@@ -31,7 +31,7 @@ const philosophies = [
     title: '確実な検証とデバッグ',
     description:
       '複雑な会計連携や電文ログ解析の経験から、エッジケースを網羅する検証と原因特定能力を重視。',
-    link: '/projects/movie-review',
+    link: '/projects/movie-reviews',
     linkLabel: 'API連携で実践',
   },
   {
