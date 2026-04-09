@@ -7,6 +7,7 @@ import BooksAppDetailPage from './pages/Projects/BooksAppDetailPage'
 import MovieSearchDetailPage from './pages/Projects/MovieSearchDetailPage'
 import MovieReviewsDetailPage from './pages/Projects/MovieReviewsDetailPage'
 import ExpenseManagerDesailPage from './pages/Projects/ExpenseManagerDesailPage'
+import { ArchitecturePage } from './pages/ArchitecturePage'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="projects/movie-search" element={<MovieSearchDetailPage />} />
         <Route path="projects/movie-reviews" element={<MovieReviewsDetailPage />} />
         <Route path="projects/expense-manager" element={<ExpenseManagerDesailPage />} />
+        <Route path="/architecture" element={<ArchitecturePage />} />
       </Route>
     </Routes>
   )

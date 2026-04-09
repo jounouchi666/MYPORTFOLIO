@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router'
-import { User, Wrench, Briefcase, Terminal, Menu, X } from 'lucide-react'
+import { User, Wrench, Briefcase, Terminal, Menu, X, Layers } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 type NavItem = {
@@ -13,8 +13,9 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { path: '/profile', label: 'Profile', icon: User, hint: '自己紹介' },
-  { path: '/skills', label: 'Skills', icon: Wrench, hint: '技術スタック' },
   { path: '/projects', label: 'Projects', icon: Briefcase, hint: 'プロジェクト' },
+  { path: '/architecture', label: 'Architecture', icon: Layers, hint: 'アーキテクチャ' },
+  { path: '/skills', label: 'Skills', icon: Wrench, hint: '技術スタック' },
 
   {
     path: 'https://github.com/jounouchi666',
