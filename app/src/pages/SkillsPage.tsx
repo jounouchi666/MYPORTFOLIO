@@ -142,47 +142,50 @@ const skillCategories = [
 
 export function SkillsPage() {
   return (
-    <section className="py-8">
-      <h2 className="font-serif text-3xl text-foreground first-letter:text-primary mb-2 tracking-widest">Skills</h2>
-      <p className="text-muted-foreground mb-8">技術スタックと技術の概要</p>
+    <>
+      <title>Portfolio - Skills</title>
+      <section className="py-8">
+        <h2 className="font-serif text-3xl text-foreground first-letter:text-primary mb-2 tracking-widest">Skills</h2>
+        <p className="text-muted-foreground mb-8">技術スタックと技術の概要</p>
 
 
-      <div className="space-y-8 mb-10">
-        {skillCategories.map((category) => (
-          <div key={category.name}>
-            <h3 className="text-sm font-medium text-foreground/80 mb-4 tracking-wide uppercase">
-              {category.name}
-            </h3>
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-              {category.skills.map((skill) => (
-                <div key={skill.name} className="border rounded p-3">
-                  <p className="font-medium">{skill.name}</p>
+        <div className="space-y-8 mb-10">
+          {skillCategories.map((category) => (
+            <div key={category.name}>
+              <h3 className="text-sm font-medium text-foreground/80 mb-4 tracking-wide uppercase">
+                {category.name}
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="border rounded p-3">
+                    <p className="font-medium">{skill.name}</p>
 
-                  <p className="text-sm text-muted-foreground">
-                    {skill.description}
-                  </p>
+                    <p className="text-sm text-muted-foreground">
+                      {skill.description}
+                    </p>
 
-                  {skill.project && (
-                    <Link
-                      to={skill.project.path}
-                      className="text-xs text-primary mt-2 inline-block hover:underline"
-                    >
-                      → {skill.project.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
+                    {skill.project && (
+                      <Link
+                        to={skill.project.path}
+                        className="text-xs text-primary mt-2 inline-block hover:underline"
+                      >
+                        → {skill.project.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* 導線 */}
-      <div className="flex gap-6 text-sm">
-        <Link to="/architecture" className="text-primary hover:underline">
-          ← Architecture
-        </Link>
-      </div>
-    </section>
+        {/* 導線 */}
+        <div className="flex gap-6 text-sm">
+          <Link to="/architecture" className="text-primary hover:underline">
+            ← Architecture
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
