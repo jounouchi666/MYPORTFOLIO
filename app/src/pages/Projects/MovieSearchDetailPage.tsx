@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function MovieSearchDetailPage() {
   return (
     <>
@@ -56,15 +58,15 @@ export default function MovieSearchDetailPage() {
           <h2 className="text-xl font-medium mb-3">Architecture</h2>
 
           <pre className="bg-secondary p-4 rounded text-sm overflow-x-auto">
-  {`Frontend (React)
-          ↓
-  Laravel API
-          ↓
-  UseCase
-          ↓
-  Repository
-          ↓
-  TMDb API`}
+{`Frontend (React)
+        ↓
+Laravel API
+        ↓
+UseCase
+        ↓
+Repository
+        ↓
+TMDb API`}
           </pre>
 
           <p className="text-muted-foreground mt-3">
@@ -95,6 +97,13 @@ export default function MovieSearchDetailPage() {
           </div>
         </section>
       </section>
+
+      {/* 導線 */}
+      <div className="flex gap-6 text-sm">
+        <Link to="/projects" className="text-primary hover:underline">
+          ← Back to Projects
+        </Link>
+      </div>
     </>
   )
 }
