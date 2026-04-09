@@ -110,6 +110,7 @@ export function ProfilePage() {
 
   return (
     <>
+      <title>Portfolio - Profile</title>
       <section className="min-h-[calc(100vh-10rem)] flex flex-col justify-center">
 
         <div className="mb-12">
@@ -238,9 +239,9 @@ export function ProfilePage() {
                   {item.title}
                 </p>
 
-                <ul className="text-sm text-muted-foreground space-y-1">
+                <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-5">
                   {item.points.map((p) => (
-                    <li key={p}>・{p}</li>
+                    <li key={p}>{p}</li>
                   ))}
                 </ul>
               </div>
