@@ -1,7 +1,11 @@
+import { cn } from '@/lib/utils'
 import { ExternalLink } from 'lucide-react'
+import { useState } from 'react'
 import { Link } from 'react-router'
 
 export default function BooksAppDetailPage() {
+  const [hovered, setHovered] = useState<boolean>(false)
+
   return (
     <>
       <title>Portfolio - BooksApp</title>
@@ -14,14 +18,7 @@ export default function BooksAppDetailPage() {
         </p>
 
         {/* Links */}
-        <div className="flex gap-4 text-sm mb-10">
-          <a
-            href="https://books-app-z5ig.onrender.com"
-            target="_blank"
-            className="text-green-400 hover:underline flex items-center gap-1"
-          >
-            Live <ExternalLink className="w-4 h-4" />
-          </a>
+        <div className="flex gap-4 text-sm mb-4">
           <a
             href="https://github.com/jounouchi666"
             target="_blank"
@@ -30,6 +27,43 @@ export default function BooksAppDetailPage() {
             GitHub →
           </a>
         </div>
+
+        {/* Live Demo */}
+        <div className="mb-10">
+          <div>
+            <a
+              href="https://books-app-z5ig.onrender.com"
+              target="_blank"
+              className="text-green-400 hover:underline flex items-center gap-1"
+            >
+              Live <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+          <div
+            className={cn(
+              'pt-1 px-2 pt-1shadow-sm overflow-hidden',
+              'transition-all duration-300'
+            )}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            <p className="text-primary text-sm cursor-default">Demo Account</p>
+            <div
+              className={cn(
+                'overflow-hidden transition-all duration-500',
+                hovered
+                  ? 'max-h-48 opacity-100'
+                  : 'max-h-0 opacity-0'
+              )}
+            >
+              <div className="text-sm space-y-2 pl-3 mt-1 border-l-2 border-primary/50">
+                <p className="text-xs">email: guest@example.com</p>
+                <p className="text-xs">password: password123</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
 
         {/* 概要 */}
         <section className="mb-10">
