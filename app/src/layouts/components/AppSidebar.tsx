@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router'
 import { User, Wrench, Briefcase, Terminal, Menu, X, Layers } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Github from './icons/Github'
 
 type NavItem = {
   path: string
@@ -20,7 +21,7 @@ const navItems: NavItem[] = [
   {
     path: 'https://github.com/jounouchi666',
     label: 'GitHub',
-    icon: Terminal,
+    icon: Github,
     hint: 'ソースコード',
     external: true,
   },
@@ -95,13 +96,6 @@ export function AppSidebar() {
                 Now: Building WebRTC streaming app
               </p>
             </div>
-
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="lg:hidden p-2 text-muted-foreground hover:text-foreground"
-            >
-              <X className="w-5 h-5" />
-            </button>
           </div>
         </div>
 
