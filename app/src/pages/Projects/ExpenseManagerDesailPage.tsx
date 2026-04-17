@@ -5,7 +5,7 @@ export default function ExpenseManagerDesailPage() {
     <>
       <title>Portfolio - ExpenseManager</title>
       <div className='mb-10'>
-        <p>Comming Soon...</p>
+        <p>Coming Soon...</p>
       </div>
       
 
