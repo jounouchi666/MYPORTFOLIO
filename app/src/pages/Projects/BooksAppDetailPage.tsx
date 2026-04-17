@@ -20,7 +20,7 @@ export default function BooksAppDetailPage() {
         {/* Links */}
         <div className="flex gap-4 text-sm mb-4">
           <a
-            href="https://github.com/jounouchi666"
+            href="https://github.com/jounouchi666/books_app_laravel_ddd"
             target="_blank"
             className="text-primary hover:underline"
           >
