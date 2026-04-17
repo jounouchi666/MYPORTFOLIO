@@ -58,7 +58,7 @@ export default function BooksAppDetailPage() {
             >
               <div className="text-sm space-y-2 pl-3 mt-1 border-l-2 border-primary/50">
                 <p className="text-xs">email: guest@example.com</p>
-                <p className="text-xs">password: password123</p>
+                <p className="text-xs">password: password</p>
               </div>
             </div>
           </div>
